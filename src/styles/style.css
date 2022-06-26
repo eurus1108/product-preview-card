@@ -1,0 +1,135 @@
+:root {
+  --p-darkCyan: hsl(158, 36%, 37%);
+  --p-cream: hsl(30, 38%, 92%);
+  --neutral-700: hsl(212, 21%, 14%);
+  --neutral-600: hsl(228, 12%, 48%);
+  --neutral-500: hsl(0, 0%, 100%);
+  --font-l: 3.2rem;
+  --font-md: 1.4rem;
+  --font-sm: 1.3rem;
+  --fw-md: 500;
+  --fw-bd: 700;
+  --raduis-700: 1rem;
+  --raduis-500: 0.8rem;
+  --font-family-default: "Montserrat", "Fraunces", sans-serif;
+  --font-family-headline: "Fraunces", "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0 1.6rem;
+  font-family: var(--font-family-default);
+  font-size: var(--font-md);
+  font-weight: var(--fw-md);
+  color: var(--neutral-600);
+  background-color: var(--p-cream);
+}
+
+.card-container {
+  padding: 2.8rem 0;
+}
+
+.card {
+  background-color: var(--neutral-500);
+  border-radius: var(--raduis-700);
+  overflow: hidden;
+}
+
+.card__mobile-img {
+  width: 100%;
+}
+
+.card__mobile-img img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.card__content-container {
+  padding: 2.4rem;
+}
+
+.card__text-content {
+  margin-bottom: 4.4rem;
+}
+
+.card__sub-headline {
+  margin-bottom: 1.2rem;
+  font-size: var(--font-sm);
+  letter-spacing: 0.33em;
+}
+
+.card__headline,
+.card__current-price {
+  font-family: var(--font-family-headline);
+  font-size: var(--font-l);
+}
+
+.card__headline {
+  margin-bottom: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.035em;
+  color: var(--neutral-700);
+}
+
+.card__body {
+  line-height: 2.3rem;
+}
+
+@media only screen and (max-width: 996px) {
+  .card__body {
+    font-size: var(--font-sm);
+  }
+}
+
+.card__sale-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.6rem;
+}
+
+.card__current-price {
+  margin-right: 2.4rem;
+  color: var(--p-darkCyan);
+  letter-spacing: -0.0225em;
+}
+
+.card__old-price {
+  font-size: var(--font-sm);
+  font-weight: var(--fw-md);
+  text-decoration: line-through;
+}
+
+.card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  padding: 1.6rem 0 1.5rem;
+  width: 100%;
+  background-color: var(--p-darkCyan);
+  color: var(--neutral-500);
+  outline: none;
+  border: none;
+  border-radius: var(--raduis-500);
+}
+
+.card__button-label {
+  margin-left: 1.4rem;
+  font-weight: var(--fw-bd);
+  letter-spacing: 0.05em;
+}
