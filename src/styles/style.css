@@ -39,6 +39,10 @@ body {
   background-color: var(--p-cream);
 }
 
+.h-wrapper {
+  height: 100vh;
+}
+
 .card-container {
   padding: 2.8rem 0;
 }
@@ -49,11 +53,17 @@ body {
   overflow: hidden;
 }
 
-.card__mobile-img {
+.card__desktop-img {
+  display: none;
+}
+
+.card__mobile-img,
+.card__desktop-img {
   width: 100%;
 }
 
-.card__mobile-img img {
+.card__mobile-img img,
+.card__desktop-img img {
   width: 100%;
   vertical-align: middle;
 }
@@ -89,9 +99,10 @@ body {
   line-height: 2.3rem;
 }
 
-@media only screen and (max-width: 996px) {
+@media only screen and (max-width: 631px) {
   .card__body {
     font-size: var(--font-sm);
+    letter-spacing: 0.025em;
   }
 }
 
@@ -99,6 +110,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 1.6rem;
 }
 
@@ -126,10 +138,64 @@ body {
   outline: none;
   border: none;
   border-radius: var(--raduis-500);
+  cursor: pointer;
+  transition: 300ms ease;
+}
+
+.card__button:hover {
+  --p-darkCyan: hsl(156, 42%, 18%);
 }
 
 .card__button-label {
   margin-left: 1.4rem;
   font-weight: var(--fw-bd);
   letter-spacing: 0.05em;
+}
+
+@media only screen and (min-width: 632px) {
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60rem;
+    width: 100%;
+  }
+
+  .card__mobile-img {
+    display: none;
+  }
+
+  .card__desktop-img {
+    display: block;
+  }
+
+  .card__content-container {
+    padding: 3.1rem 3.1rem 3.2rem 3.2rem;
+  }
+
+  .card__text-content {
+    margin: 0;
+  }
+
+  .card__sub-headline {
+    margin-bottom: 2rem;
+  }
+
+  .card__headline {
+    margin-bottom: 2.3rem;
+  }
+
+  .card__sale-price {
+    margin: 2.7rem 0 2.6rem;
+  }
+
+  .card__button-label {
+    margin-left: 1.1rem;
+  }
 }
